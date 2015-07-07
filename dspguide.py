@@ -44,6 +44,8 @@ def ch6_tab61_convolution(h, x):
     Input side algorithm as the author calls it
     M*N multiplications and additions
     with M and N number of items in h and x
+    
+    Returns: a N + M - 1 long signal
     """
     N = x.shape[0]
     M = h.shape[0]
@@ -60,6 +62,8 @@ def ch6_eq61_convolution(h, x):
     Implementation of convolution
     Using yet another technique to avoid overrun of x array: no padding, no test in inner loop
     Same number of multiplications and additions as other method, a bit more complexity
+    
+    Returns: a N + M - 1 long signal
     """
     N = x.shape[0]
     M = h.shape[0]
@@ -80,9 +84,11 @@ def ch6_eq61_convolution(h, x):
 def ch6_tab62_convolution_onlyvalid(h, x):
     """
     Implementation of convolution
-    Using only valid samples, where h is fully immersed in x
+    Returns only valid samples, where h is fully immersed in x
     (N - M + 1) * M  multiplications and additions
     with M and N number of items in h and x
+    
+    Returns: a N - M + 1 long signal
     """
     N = x.shape[0]
     M = h.shape[0]
